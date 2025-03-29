@@ -28,6 +28,15 @@ pip install -r requirements.txt
 # [Instructions for downloading model checkpoints if hosted separately]
 ```
 
+## Model Checkpoints
+
+After training is complete, two model versions are available:
+
+1. **Base Model** (`checkpoints_model/best_model.pt`): The primary model trained on the full dataset with weighted loss
+2. **Fine-tuned Model** (`checkpoints_model_deletion/best_model.pt`): A model specifically fine-tuned to improve performance on deletion errors
+
+The fine-tuned model has better performance on deletion errors (F1 score of 0.7776 vs 0.7545) but may have slightly different behavior on other error types.
+
 ## Usage
 
 ### As a Python Module
@@ -35,8 +44,11 @@ pip install -r requirements.txt
 ```python
 from spell_corrector import AzerbaijaniSpellCorrector
 
-# Initialize the model
+# Initialize with the base model
 corrector = AzerbaijaniSpellCorrector(checkpoint_path='checkpoints_model/best_model.pt')
+
+# Or use the fine-tuned model for better handling of deletion errors
+# corrector = AzerbaijaniSpellCorrector(checkpoint_path='checkpoints_model_deletion/best_model.pt')
 
 # Correct a single word
 corrected_word = corrector.correct('qadinlar')
@@ -51,7 +63,11 @@ print(corrected_words)  # Output: ['qadınlar', 'gəlmək', 'üçün', 'insan']
 ### As a Command-Line Tool
 
 ```bash
+# Use the base model (default)
 python spell_corrector.py
+
+# Use the fine-tuned model for better handling of deletion errors
+python spell_corrector.py --checkpoint checkpoints_model_deletion/best_model.pt
 ```
 
 This will start an interactive session where you can enter words to correct:
@@ -106,6 +122,8 @@ The dataset has the following distribution:
 - KEYBOARD: 243,454 examples (35.7%)
 - INSERTION: 52,528 examples (7.7%)
 - DELETION: 19,928 examples (2.9%)
+
+The dataset is publicly available at: [https://huggingface.co/datasets/LocalDoc/spell_mistake_correct_pairs_azerbaijani](https://huggingface.co/datasets/LocalDoc/spell_mistake_correct_pairs_azerbaijani)
 
 ## Examples
 
