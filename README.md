@@ -36,6 +36,7 @@ After training is complete, two model versions are available:
 2. **Fine-tuned Model** (`checkpoints_model_deletion/best_model.pt`): A model specifically fine-tuned to improve performance on deletion errors
 
 The fine-tuned model has better performance on deletion errors (F1 score of 0.7776 vs 0.7545) but may have slightly different behavior on other error types.
+Since the GitHub limit does not allow uploading models to the repository, you can download them separately from the link https://drive.google.com/file/d/1gNj-8cv__UGxjVI6B9liogVAifkujkxa/view?usp=sharing
 
 ## Usage
 
