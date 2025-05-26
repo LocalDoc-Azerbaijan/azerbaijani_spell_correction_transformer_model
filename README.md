@@ -6,10 +6,10 @@ This repository contains a Transformer-based neural model for correcting spellin
 
 - Character-level Transformer architecture for precise spelling correction
 - Handles four distinct error types:
-  - Transliteration errors (53.7% of dataset)
-  - Keyboard errors (35.7% of dataset)
-  - Insertion errors (7.7% of dataset)
-  - Deletion errors (2.9% of dataset)
+  - Transliteration errors (57.8% of dataset)
+  - Keyboard errors (4.6% of dataset)
+  - Insertion errors (11.3% of dataset)
+  - Deletion errors (26.3% of dataset)
 - Specialized fine-tuning for deletion errors
 - High accuracy (F1 score of 0.9689)
 - Fast inference on CPU (~75ms per word)
