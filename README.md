@@ -2,18 +2,6 @@
 
 This repository contains a Transformer-based neural model for correcting spelling errors in Azerbaijani text. The model is designed to handle four different types of errors: transliteration, keyboard mistakes, character insertions, and character deletions.
 
-## Features
-
-- Character-level Transformer architecture for precise spelling correction
-- Handles four distinct error types:
-  - Transliteration errors (57.8% of dataset)
-  - Keyboard errors (4.6% of dataset)
-  - Insertion errors (11.3% of dataset)
-  - Deletion errors (26.3% of dataset)
-- Specialized fine-tuning for deletion errors
-- High accuracy (F1 score of 0.9777)
-- Fast inference on CPU (~75ms per word)
-
 ## Installation
 
 ```bash
@@ -100,29 +88,29 @@ The spelling correction system employs a character-level Transformer architectur
 The model achieves the following performance metrics:
 
 - **Overall**:
-  - Precision: 0.9689
-  - Recall: 0.9689
-  - F1 Score: 0.9689
-  - Character-level accuracy: 0.9939
+  - Precision: 0.9777
+  - Recall: 0.9777
+  - F1 Score: 0.9777
+  - Character-level accuracy: 0.9954
   - Average Levenshtein distance: 0.05
 
 - **By error type**:
-  - KEYBOARD: 0.9868 (24025/24346)
-  - TRANSLITERATION: 0.9728 (35664/36661)
-  - INSERTION: 0.9395 (4935/5253)
-  - DELETION: 0.7776 (1550/1992) after fine-tuning
+  - TRANSLITERATION: 0.9816 (45233/46083)
+  - DELETION: 0.9765 (20474/20967)
+  - INSERTION: 0.9666 (8704/9005)
+  - KEYBOARD: 0.9637 (3502/3634)
 
 ## Dataset
 
-The model was trained on a dataset of 682,513 word pairs, each containing a misspelled word and its correction. Each example is annotated with:
+The model was trained on a dataset of 797k word pairs, each containing a misspelled word and its correction. Each example is annotated with:
 - Error type (TRANSLITERATION, KEYBOARD, INSERTION, or DELETION)
 - Character-level operations (correct, substitution, deletion, or insertion)
 
 The dataset has the following distribution:
-- TRANSLITERATION: 366,603 examples (53.7%)
-- KEYBOARD: 243,454 examples (35.7%)
-- INSERTION: 52,528 examples (7.7%)
-- DELETION: 19,928 examples (2.9%)
+  - Transliteration errors (57.8% of dataset)
+  - Keyboard errors (4.6% of dataset)
+  - Insertion errors (11.3% of dataset)
+  - Deletion errors (26.3% of dataset)
 
 The dataset is publicly available at: [https://huggingface.co/datasets/LocalDoc/spell_mistake_correct_pairs_azerbaijani](https://huggingface.co/datasets/LocalDoc/spell_mistake_correct_pairs_azerbaijani)
 
