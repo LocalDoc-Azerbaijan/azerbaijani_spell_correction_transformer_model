@@ -11,7 +11,7 @@ This repository contains a Transformer-based neural model for correcting spellin
   - Insertion errors (11.3% of dataset)
   - Deletion errors (26.3% of dataset)
 - Specialized fine-tuning for deletion errors
-- High accuracy (F1 score of 0.977)
+- High accuracy (F1 score of 0.9777)
 - Fast inference on CPU (~75ms per word)
 
 ## Installation
