@@ -6,8 +6,8 @@ This repository contains a Transformer-based neural model for correcting spellin
 
 ```bash
 # Clone the repository
-git clone https://github.com/LocalDoc-Azerbaijan/azerbaijani_spell_correction_lstm_model.git
-cd azerbaijani_spell_correction_lstm_model
+git clone https://github.com/LocalDoc-Azerbaijan/azerbaijani_spell_correction_transformer_model.git
+cd azerbaijani_spell_correction_transformer_model
 
 # Install dependencies
 pip install -r requirements.txt
